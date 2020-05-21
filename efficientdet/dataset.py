@@ -25,6 +25,8 @@ class CocoDataset(Dataset):
         categories = self.coco.loadCats(self.coco.getCatIds())
         categories.sort(key=lambda x: x['id'])
 
+        print(categories)
+
         self.classes = {}
         for c in categories:
             self.classes[c['name']] = len(self.classes)
